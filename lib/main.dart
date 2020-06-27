@@ -44,8 +44,44 @@ class MyHomepage extends StatelessWidget {
                 elevation: 5,
               ),
             ),
-            Card(
-              child: Text("Transaction History"),
+            Column(
+              children: transactions.map((tx) {
+                return Row(
+                  children: <Widget>[
+                    Container(
+                      margin:
+                          EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+                      padding: EdgeInsets.all(10),
+                      child: Text(
+                        tx.price.toString(),
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold
+                        ),
+                      ),
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text(
+                          tx.name,
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold
+                          ),
+                        ),
+                        Text(
+                          tx.date.toString(),
+                          style: TextStyle(
+                            fontSize: 14,
+                            color: Colors.grey
+                          ), 
+                        ),
+                      ],
+                    ),
+                  ],
+                );
+              }).toList(),
             ),
           ],
         ));

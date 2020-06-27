@@ -3,7 +3,7 @@ import 'package:flutter/foundation.dart';
 class Transaction {
   final String id;
   final String name;
-  final double price;
+  final int price;
   final DateTime date;
 
   Transaction({

@@ -20,6 +20,7 @@ class TransactionInput extends StatelessWidget {
           TextField(
             decoration: InputDecoration(labelText: 'Price'),
             controller: priceController,
+            keyboardType: TextInputType.numberWithOptions(signed: false, decimal: false),
           ),
           FlatButton(
             child: Text("Add"),

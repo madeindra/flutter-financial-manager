@@ -20,6 +20,7 @@ class _TransactionInputState extends State<TransactionInput> {
 
     if (nameTransaction.isNotEmpty && priceTransaction > 0) {
       widget.newTx(nameTransaction, priceTransaction);
+      Navigator.of(context).pop();
       }
   }
 

@@ -17,13 +17,10 @@ class _TransactionInputState extends State<TransactionInput> {
   void addTransaction() {
     final nameTransaction = nameController.text;
     final priceTransaction = int.parse(priceController.text);
-    
-    print(nameTransaction.isNotEmpty);
-    print(priceTransaction.toString());
 
-    if(nameTransaction.isNotEmpty && priceTransaction > 0){
+    if (nameTransaction.isNotEmpty && priceTransaction > 0) {
       widget.newTx(nameTransaction, priceTransaction);
-    }
+      }
   }
 
   @override
@@ -35,13 +32,14 @@ class _TransactionInputState extends State<TransactionInput> {
           TextField(
             decoration: InputDecoration(labelText: 'Name'),
             controller: nameController,
-            onSubmitted: (_) => addTransaction,
+            onSubmitted: (_) => addTransaction(),
           ),
           TextField(
             decoration: InputDecoration(labelText: 'Price'),
             controller: priceController,
-            keyboardType: TextInputType.numberWithOptions(signed: false, decimal: false),
-            onSubmitted: (_) => addTransaction,
+            keyboardType:
+                TextInputType.numberWithOptions(signed: false, decimal: false),
+            onSubmitted: (_) => addTransaction(),
           ),
           FlatButton(
             child: Text("Add"),

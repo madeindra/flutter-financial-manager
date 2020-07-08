@@ -11,6 +11,10 @@ class MyFinancial extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Financial Manager',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        accentColor: Colors.amber
+      ),
       home: MyHomepage(),
     );
   }
